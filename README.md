@@ -10,9 +10,9 @@
 
 This repo provides an out of the box configurable template to develop and test AWS Glue jobs locally, with linting, code formatting, testing and so on.
 
-<center>
+<p align="center">
 <img src="assets/example.gif" width=80%>
-</center>
+</p>
 
 Inspired from [this aws blog post](https://aws.amazon.com/blogs/big-data/develop-and-test-aws-glue-version-3-0-jobs-locally-using-a-docker-container/), and from years spent on painfully debugging Glue jobs on the console and cursing every saint in Paradise.
 
@@ -56,9 +56,9 @@ The prerequisites are the same as for running any other devcontainer. For a comp
 
 This is only necessary the first time you build the container.
 
-<center>
+<p align="center">
 <img src="assets/reopen.png" width=70%>
-</center>
+</p>
 
 ---
 
@@ -67,6 +67,7 @@ This is only necessary the first time you build the container.
 Once your container has finished building, VSCode is going to notify you that the python extension is not loaded. This is a known issue. Just click "Reload" and you're good to go.
 
 > **Note**
+>
 > The created container will follow this pattern:
 >
 > `<workspace-folder-name>_<username>_glue-pyspark-poetry_devcontainer`
@@ -143,15 +144,19 @@ E           +-----------------------+-----------------------+
 ## Notes
 
 > **Note**
+>
 > The container default is to run Glue version 4.0.0 *(and python 3.10+)*. You can change this by editing `devcontainer.json` and changing the version of Glue there. Remember also to set a compatible python version in `pyproject.toml`!
 
 > **Note**
+>
 > Spark UI is as always available at `localhost:4040`, but since the UI lives just as long as the SparkContext, it's probably better to use the history server at `localhost:18080`.
 
 > **Note**
+>
 > Running a python file from the "Run Python File" button doesn't support loading environment variables from a `.env` file, but the debugger and test runner do. This is an issue with VSCode itself, which is why `dotenv` is added as a conditional dependency for local development.
 
 > **Note**
+>
 > Poetry.lock is added to `.gitignore`. Remember to remove it when working on your projects!
 
 ## Known issues
