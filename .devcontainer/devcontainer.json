@@ -1,0 +1,69 @@
+{
+	"name": "glue-pyspark-poetry",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"GLUE_VERSION": "4.0.0",
+			"POETRY_VERSION": "1.4.0"
+		}
+	},
+
+	"runArgs": ["--name", "${localWorkspaceFolderBasename}_${localEnv:USER}${localEnv:USERNAME}_glue-pyspark-poetry_devcontainer"],
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/glue_user/workspace,type=bind",
+	"workspaceFolder": "/home/glue_user/workspace",
+	"mounts": [
+		"source=${localWorkspaceFolder}/.devcontainer/.bashrc,target=/home/glue_user/.bashrc.1,readonly,type=bind",
+		"source=${localEnv:USERPROFILE}${localEnv:HOME}/.aws,target=/home/glue_user/.aws,readonly,type=bind"
+	],
+
+	"containerEnv": {
+		"DISABLE_SSL": "true"
+		// "DATALAKE_FORMATS": "delta,hudi,iceberg" // ONLY FOR GLUE 4.0!
+	},
+
+	// 👇 Use 'initializeCommand' to run commands on the host machine before the container is created.
+	// "initializeCommand": "git config --global --add safe.directory ${workspaceFolder}",
+
+	// 👇 Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
+
+	"postAttachCommand": "bash ./.devcontainer/post-attach.sh",
+
+	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+	// "features": {},
+
+	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [4040, 18080],
+
+	// 👇 Configure tool-specific properties.
+	"customizations": {
+        "vscode": {
+            "extensions":[
+				"ms-python.python",
+				"ms-python.flake8",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"kevinrose.vsc-python-indent",
+				"bungcip.better-toml"
+			],
+			"settings": {
+				"python.envFile": "${containerWorkspaceFolder}/.env",
+				"python.defaultInterpreterPath": "./.venv/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.flake8Enabled": true,
+				"python.analysis.extraPaths": [
+					"/home/glue_user/aws-glue-libs/PyGlue.zip:/home/glue_user/spark/python/lib/py4j-0.10.9-src.zip:/home/glue_user/spark/python/"
+				],
+				"python.formatting.provider": "none",
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter",
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": true
+					}
+				}
+			}
+        }
+	}
+}
