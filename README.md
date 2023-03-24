@@ -8,7 +8,7 @@
 - [Known issues](#known-issues)
 - [Contributing](#contributing)
 
-This repo provides an out-of-the-box configurable template to develop and test AWS Glue jobs locally, with linting, code formatting, testing and so on.
+This repo provides an out of the box configurable template to develop and test AWS Glue jobs locally, with linting, code formatting, testing and so on.
 
 <center>
 <img src="assets/example.gif" width=80%>
@@ -29,7 +29,7 @@ This devcontainer comes with the following features baked in:
 - pytest for testing
 - [chispa](https://github.com/MrPowers/chispa) to provide PySpark test helper methods
 - your `~/.aws` folder is mounted in the container (so you can used named profiles)
-- your `~/.gitconfig` file is mounted in the container
+- out of the box git support inside the container
 - custom `.bashrc` sourced at the end of the base image one.
 
 For flake8, black and isort the respective VSCode extensions are included.
