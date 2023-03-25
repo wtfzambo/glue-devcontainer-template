@@ -68,7 +68,7 @@ Once your container has finished building, VSCode is going to notify you that th
 
 > **Note**
 >
-> The created container will follow this pattern:
+> The name of the created container will follow this pattern:
 >
 > `<workspace-folder-name>_<username>_glue-pyspark-poetry_devcontainer`
 >
