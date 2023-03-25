@@ -38,7 +38,7 @@ Poetry is configured to use a virtualenv inside the project folder, but you can 
 
 Glue libraries are not included in the virtualenv because they're made available globally by adding them to `PATH`.
 
-You can import them as you would import any mother package and they will work as expected.
+You can import them as you would import any other package and they will work as expected.
 
 ## Prerequisites
 
