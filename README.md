@@ -4,8 +4,8 @@
 - [What's in here](#whats-in-here)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
-- [Notes](#notes)
-- [Known issues](#known-issues)
+- [📝 Notes](#-notes)
+- [⚠️ Known issues](#️-known-issues)
 - [Contributing](#contributing)
 
 This repo provides an out of the box configurable template to develop and test AWS Glue jobs locally, with linting, code formatting, testing and so on.
@@ -151,29 +151,19 @@ E           | Row(_1=None, _2=None) | Row(_1=None, _2=None) |
 E           +-----------------------+-----------------------+
 ```
 
-## Notes
+## 📝 Notes
 
-> **Note**
->
-> The container default is to run Glue version 4.0.0 *(and python 3.10+)*. You can change this by editing `devcontainer.json` and changing the version of Glue there. Remember also to set a compatible python version in `pyproject.toml`!
+- The container default is to run Glue version 4.0.0 *(and python 3.10+)*. You can change this by editing `devcontainer.json` and changing the version of Glue there. Remember also to set a compatible python version in `pyproject.toml`!
 
-> **Note**
->
-> Spark UI is as always available at `localhost:4040`, but since the UI lives just as long as the SparkContext, it's probably better to use the history server at `localhost:18080`.
+- Spark UI is as always available at `localhost:4040`, but since the UI lives just as long as the SparkContext, it's probably better to use the history server at `localhost:18080`.
 
-> **Note**
->
-> Running a python file from the "Run Python File" button doesn't support loading environment variables from a `.env` file, but the debugger and test runner do. This is an issue with VSCode itself, which is why `dotenv` is added as a conditional dependency for local development.
+- Running a python file from the "Run Python File" button doesn't support loading environment variables from a `.env` file, but the debugger and test runner do. This is an issue with VSCode itself, which is why `dotenv` is added as a conditional dependency for local development.
+- Poetry.lock is added to `.gitignore`. Remember to remove it when working on your projects!
 
-> **Note**
->
-> Poetry.lock is added to `.gitignore`. Remember to remove it when working on your projects!
+## ⚠️ Known issues
 
-## Known issues
-
-> **Warning**
-> The first time one builds the container, VSCode is going to complain that the python extension was not loaded, thus flake8, black and isort ones won't function properly, and will ask the user to reload the window.
-> This again is a problem with VSCode and the python extension, because the latter loads **only** when a python related file is opened in the editor. Just reload the window and the problem will be gone.
+The first time one builds the container, VSCode is going to complain that the python extension was not loaded, thus flake8, black and isort ones won't function properly, and will ask the user to reload the window.
+This again is a problem with VSCode and the python extension, because the latter loads **only** when a python related file is opened in the editor. Just reload the window and the problem will be gone.
 
 ## Contributing
 
