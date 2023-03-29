@@ -78,6 +78,16 @@ Once your container has finished building, VSCode is going to notify you that th
 
 ---
 
+> **Warning**
+>
+> 👉 **FOR LINUX USERS**
+>
+> Due to file permission shenanigans, run (*outside the container*):
+>
+> ```bash
+> docker exec -u 0 <YOUR-CONTAINER-NAME-OR-ID> bash -c 'chown -R glue_user /tmp/spark-events'
+> ```
+
 1. Now create a `.env` file next to `.env.example` and add your AWS named profile.
 2. Run `sample.py`, either from VSCode "Run / Debug Python file" button, or from the terminal:
 
@@ -167,4 +177,4 @@ E           +-----------------------+-----------------------+
 
 ## Contributing
 
-The resulting Docker image is quite hefty (5GB+). It could probably be slimmed down by using multi stage builds and copying only the necessary files to the last stage. If you'd like to give it a shot, feel free to open a pull request!
+The resulting Docker image is quite hefty (5GB+, 9GB+ for Linux users). It could probably be slimmed down by using multi stage builds and copying only the necessary files to the last stage. If you'd like to give it a shot, feel free to open a pull request!
