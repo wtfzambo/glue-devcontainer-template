@@ -52,6 +52,9 @@
 				"python.defaultInterpreterPath": "./.venv/bin/python",
 				"python.linting.enabled": true,
 				"python.linting.flake8Enabled": true,
+				"black-formatter.importStrategy": "fromEnvironment",
+				"isort.importStrategy": "fromEnvironment",
+				"flake8.importStrategy": "fromEnvironment",
 				"python.analysis.extraPaths": [
 					"/home/glue_user/aws-glue-libs/PyGlue.zip:/home/glue_user/spark/python/lib/py4j-0.10.9-src.zip:/home/glue_user/spark/python/"
 				],
