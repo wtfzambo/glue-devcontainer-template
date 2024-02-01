@@ -28,7 +28,7 @@ This devcontainer comes with the following features baked in:
 - isort for import sorting
 - pytest for testing
 - [chispa](https://github.com/MrPowers/chispa) to provide PySpark test helper methods
-- your `~/.aws` folder is mounted in the container (so you can used named profiles)
+- your `~/.aws` folder is mounted in the container (so you can use named profiles)
 - out of the box git support inside the container
 - custom `.bashrc` sourced at the end of the base image one.
 
