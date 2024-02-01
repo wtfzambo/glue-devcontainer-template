@@ -66,7 +66,7 @@ This is only necessary the first time you build the container.
 
 Once your container has finished building, VSCode is going to notify you that the python extension is not loaded. This is a known issue. Just click "Reload" and you're good to go.
 
-> **Note**
+> [!Note]
 >
 > The name of the created container will follow this pattern:
 >
@@ -78,7 +78,7 @@ Once your container has finished building, VSCode is going to notify you that th
 
 ---
 
-> **Warning**
+> [!Caution]
 >
 > 👉 **FOR LINUX USERS**
 >
