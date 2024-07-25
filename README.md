@@ -46,7 +46,7 @@ The prerequisites are the same as for running any other devcontainer. For a comp
 
 - Docker Desktop 2.0+ for Windows and macOS
 - Docker 18.06+ and Docker Compose 1.21+ for Linux
-- VSCode (duh)
+- VSCode or any other IDE supporting SSH (in that case, use [DevPod](https://devpod.sh/))
 
 ## Getting started
 
